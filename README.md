@@ -65,7 +65,7 @@ npm run build
 npm run start
 ```
 
-## Project Structure (Optional)
+## Project Structure
 
 ```text
 ├── app/               # App Router pages and layouts
