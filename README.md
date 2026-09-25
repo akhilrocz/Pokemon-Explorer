@@ -3,7 +3,7 @@
 Pokemon Explorer is a Next.js Application it helps with exploring various kinds of Pokemon available from PokeAPI (https://pokeapi.co/) containing Pokemon Details.
 
 [![Next.js Version](https://shields.io)](https://nextjs.org/)
-[![Deployment](https://shields.io)](https://vercel.com)
+[![Deployment](https://vercel.app)](https://vercel.com)
 
 ---
 
@@ -19,7 +19,7 @@ Pokemon Explorer is a Next.js Application it helps with exploring various kinds 
 | **Styling** (https://tailwindcss.com/)
 | **Axios** | (https://axios.rest/)
 | **PokeAPI** | (https://pokeapi.co/)
-| **Deployment** | Vercel |
+| **Deployment** | (https://vercel.com/) |
 
 ## Getting Started
 
