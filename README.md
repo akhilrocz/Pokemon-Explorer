@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pokemon Explorer
+
+Pokemon Explorer is a Next.js Application it helps with exploring various kinds of Pokemon available from PokeAPI (https://pokeapi.co/) containing Pokemon Details.
+
+[![Next.js Version](https://shields.io)](https://nextjs.org/)
+[![Deployment](https://shields.io)](https://vercel.com)
+
+---
+
+## Features
+
+- **App Router:** Built using Next.js App Router (or Pages Router).
+- **Data Fetching:** Leveraging Server Components and `fetch` with caching.
+- **Styling:** Styled using Tailwind CSS / CSS Modules / Styled Components.
+
+## Tech Stack
+
+| **Next.js** (https://nextjs.org/)
+| **Styling** (https://tailwindcss.com/)
+| **Axios** | (https://axios.rest/)
+| **PokeAPI** | (https://pokeapi.co/)
+| **Deployment** | Vercel |
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up the project locally.
+
+### Prerequisites
+
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org) (v18.x or higher recommended)
+- npm, yarn, pnpm, or bun
+
+### Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/akhilrocz/Pokemon-Explorer.git
+   cd pokemon-explorer
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or yarn install / pnpm install / bun install
+   ```
+
+### Running Locally
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# or yarn dev / pnpm dev / bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the application for production deployment:
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure (Optional)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+├── app/               # App Router pages and layouts
+├── components/        # Reusable UI components
+  └── PokemonCard.tsx  # Reusable Pokemon Cards
+├── pokemon/[id]/
+  └── page.tsx # Pokémon detail page
+├── types/
+  └── pokemon.ts # Shared TypeScript types
+├── public/            # Static assets like images and fonts
+```
