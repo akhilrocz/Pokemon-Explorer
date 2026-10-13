@@ -4,16 +4,21 @@ import Link from "next/link";
 
 import { ArrowLeft } from "lucide-react";
 
-import type {Pokemon} from "../../types/pokemon"
+import type { Pokemon } from "../../types/pokemon";
 
 async function getPokemon(id: string): Promise<Pokemon> {
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
-    cache: "no-store",
-  });
+  try {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
+      cache: "no-store",
+    });
 
-  if (!response.ok) throw new Error("Error fetching pokemon details");
+    if (!response.ok) throw new Error("Error fetching pokemon details");
 
-  return response.json();
+    return response.json();
+  } catch (error) {
+    console.error("Error fetching pokemon details:", error);
+    throw error;
+  }
 }
 
 export default async function PokemonDetails({
@@ -38,7 +43,9 @@ export default async function PokemonDetails({
 
       <div className="w-full max-w-2xl bg-slate-800 border border-[#3B4CCA] rounded-xl p-6 md:p-10 flex flex-col items-center">
         <p className="text-blue-400 font-semibold"># {pokemon.id}</p>
-        <h2 className="text-3xl sm:text-4xl font-bold mt-1 capitalize">{pokemon.name}</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mt-1 capitalize">
+          {pokemon.name}
+        </h2>
 
         <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56">
           <Image
@@ -86,7 +93,9 @@ export default async function PokemonDetails({
         </div>
 
         <section className="mt-8 w-full">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-yellow-400">Abilities</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-yellow-400">
+            Abilities
+          </h2>
           <ul className="flex flex-wrap gap-2">
             {pokemon.abilities.map((item) => {
               return (
@@ -102,7 +111,9 @@ export default async function PokemonDetails({
         </section>
 
         <section className="mt-8 w-full">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-yellow-400">Stats</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-yellow-400">
+            Stats
+          </h2>
           {pokemon.stats.map((item) => {
             const percentage = Math.min((item.base_stat / 255) * 100, 100);
             return (
@@ -126,7 +137,9 @@ export default async function PokemonDetails({
         </section>
 
         <div className="w-full mt-8">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-yellow-400">Moves</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-yellow-400">
+            Moves
+          </h2>
           <div className="flex flex-wrap gap-2">
             {pokemon.moves.slice(0, 3).map((item) => {
               return (
